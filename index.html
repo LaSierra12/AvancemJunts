@@ -1,104 +1,333 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partido Renovación Estudiantil | El cambio empieza en el aula</title>
+    <title>Avança | El futur no s'espera, es construeix</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
     <style>
-        /* ESTILOS CSS - Diseño Visual */
-        :root {
-            --color-primario: #004d99;
-            /* Azul serio */
-            --color-secundario: #f0f0f0;
-            --color-acento: #e63946;
-            /* Rojo para llamadas a la acción */
-            --texto: #333;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: var(--texto);
-        }
-
-        /* Cabecera */
-        header {
-            background-color: var(--color-primario);
-            color: white;
-            padding: 1rem 0;
+        /* --- FORMULARIO DE PARTICIPACIÓN --- */
+        .form-section {
+            background-color: white;
+            padding: 60px 20px;
             text-align: center;
         }
 
-        nav ul {
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--hueso-claro);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--hueso-oscuro);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--verde);
+        }
+
+        .form-group input, 
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            box-sizing: border-box; /* Importante para que no se salga */
+            transition: 0.3s;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--morado);
+            outline: none;
+        }
+
+        .btn-enviar {
+            background-color: var(--verde);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-enviar:hover {
+            background-color: var(--morado);
+        }
+        /* --- CONFIGURACIÓN DE COLORES (Tu paleta exacta) --- */
+        :root {
+            --verde: #055e36;
+            --morado: #7f52b6;
+            --hueso-oscuro: #cbc496;
+            --hueso-claro: #f2ebbe;
+            --blanco: #ffffff;
+            --texto: #2c2c2c;
+            --gradiente: linear-gradient(135deg, var(--verde) 0%, var(--morado) 100%);
+        }
+
+        /* --- ESTILOS GENERALES --- */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--hueso-claro);
+            color: var(--texto);
+            margin: 0;
+            overflow-x: hidden;
+            /* Evita scroll horizontal */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            margin-top: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
             list-style: none;
             padding: 0;
         }
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
+        /* --- BARRA DE NAVEGACIÓN --- */
+        header {
+            background-color: var(--blanco);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0.5rem 1rem;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* Sección Hero (Portada) */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 70px;
+            /* Ajusta esto según tu logo */
+            width: auto;
+        }
+
+        .brand-name {
+            font-size: 1.8rem;
+            color: var(--verde);
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 700;
+            color: var(--verde);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--morado);
+        }
+
+        .btn-unete {
+            background-color: var(--morado);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(127, 82, 182, 0.3);
+        }
+
+        .btn-unete:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(127, 82, 182, 0.4);
+        }
+
+        /* --- HERO (PORTADA) --- */
         .hero {
-            background-color: var(--color-secundario);
-            padding: 50px 20px;
+            background: var(--gradiente);
+            color: white;
+            padding: 100px 20px;
             text-align: center;
-            border-bottom: 5px solid var(--color-acento);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: var(--color-primario);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.1;
         }
 
-        .btn-votar {
-            background-color: var(--color-acento);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-weight: 300;
         }
 
-        /* Secciones de contenido */
+        /* --- IDEOLOGÍA (GRID) --- */
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 50px 20px;
         }
 
-        .propuestas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .tarjeta {
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
+        .section-title {
             text-align: center;
-            padding: 20px;
+            color: var(--verde);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--morado);
+            margin: 10px auto;
+        }
+
+        .grid-pilares {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border-bottom: 5px solid var(--hueso-oscuro);
+            transition: transform 0.3s, border-color 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--verde);
+        }
+
+        .card h3 {
+            color: var(--morado);
+            font-size: 1.4rem;
+        }
+
+        /* --- EQUIPO --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .member-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--morado);
+            margin-bottom: 15px;
+            background-color: #ddd;
+            /* Color de fondo si no hay foto */
+        }
+
+        .member-role {
+            color: var(--verde);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .member-email {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* --- CONTACTO Y FOOTER --- */
+        .footer {
+            background-color: var(--verde);
+            color: white;
+            padding: 50px 20px;
             margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .social-icons a:hover {
+            background: var(--morado);
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            /* En una versión avanzada haríamos un menú hamburguesa */
+            .navbar {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -106,50 +335,215 @@
 <body>
 
     <header>
-        <h2>PRE - Partido Renovación Estudiantil</h2>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#propuestas">Propuestas</a></li>
-                <li><a href="#equipo">Candidatos</a></li>
-            </ul>
-        </nav>
+        <div class="navbar">
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Logo Avança" class="logo-img" onerror="this.style.display='none'">
+                <span class="brand-name">Avança</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#ideologia" style="line-height: 2; padding-top: 10px;">Ideologia</a>
+                <a href="#programa" style="line-height: 2; padding-top: 10px;">Programa</a>
+                <a href="#equip" style="line-height: 2; padding-top: 10px;">Equip</a>
+                <a href="#contacte" class="btn-unete" style="line-height: 2; padding-top: 10px;">Uneix-te!</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="inicio" class="hero">
-        <h1>Tu voz, nuestro compromiso.</h1>
-        <p>Luchamos por una cafetería más barata y apuntes libres para todos.</p>
-        <a href="#propuestas" class="btn-votar">Lee nuestro programa</a>
+    <section class="hero">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h1>EL FUTUR NO S'ESPERA,<br>ES CONSTRUEIX</h1>
+            <p>Som la veu del progrés, la justícia social i la llibertat. Un partit jove per a una Catalunya moderna,
+                verda i feminista.</p>
+        </div>
     </section>
 
-    <div class="container">
-        <section id="propuestas">
-            <h2 style="color: var(--color-primario); text-align: center;">Nuestros Pilares</h2>
-            <div class="propuestas">
-                <div class="tarjeta">
-                    <h3>📚 Educación Abierta</h3>
-                    <p>Proponemos crear un banco común de apuntes validado por profesores.</p>
+    <section id="ideologia" class="container">
+        <h2 class="section-title">Els Nostres 5 Pilars de Govern</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
+            Defensem una esquerra progressista transformadora. La nostra missió és el blindatge dels Drets Humans i la
+            construcció d'un escut social i climàtic.
+        </p>
+    
+        <div class="grid-pilares">
+    
+            <div class="card">
+                <h3>⚖️ Justícia Social i Igualtat</h3>
+                <p>Els serveis públics no són una despesa, són la garantia material de la llibertat.</p>
+                <ul>
+                    <li><strong>Sanitat Universal:</strong> Inclusió total de salut mental i dental. Reversió de
+                        privatitzacions.</li>
+                    <li><strong>Tolerància Zero:</strong> Marc punitiu sever contra el racisme, LGTBIfòbia i violència de
+                        gènere.</li>
+                    <li><strong>Memòria Democràtica:</strong> Educar per vacunar la societat contra l'autoritarisme.</li>
+                </ul>
+            </div>
+    
+            <div class="card">
+                <h3>🏠 Revolució Habitacional</h3>
+                <p>L'habitatge és un dret, no una mercaderia. L'Estat ha d'intervenir quan el mercat falla.</p>
+                <ul>
+                    <li><strong>Fora Fons Voltor:</strong> Il·legalització de compra per especuladors estrangers en zones
+                        tensionades.</li>
+                    <li><strong>Grans Tenidors:</strong> Es considerarà a partir de 3 immobles. Límit a l'acumulació de
+                        propietats.</li>
+                    <li><strong>Topall al Lloguer:</strong> Mai podrà superar el 30% dels ingressos de la llar.</li>
+                </ul>
+            </div>
+    
+            <div class="card card-destacada">
+                <h3>🔥 Escut de Protecció Civil</h3>
+                <p>Davant la inacció, un Estat que protegeix. Dignificació immediata dels serveis d'emergència.</p>
+                <ul>
+                    <li><strong>Bombers i Forestals:</strong> Fi de la temporalitat. Els incendis s'apaguen a l'hivern
+                        (contractació fixa).</li>
+                    <li><strong>Unitat de Resposta Climàtica:</strong> Cos autonòmic d'intervenció ràpida davant desastres
+                        naturals.</li>
+                    <li><strong>Model Policial:</strong> Reorientació de fons d'antiavalots cap a protecció civil i rescat.
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="card">
+                <h3>💰 Justícia Econòmica</h3>
+                <p>Lluita contra l'aristocràcia econòmica i redistribució radical de la riquesa.</p>
+                <ul>
+                    <li><strong>Fiscalitat Agressiva:</strong> Impost a les Grans Fortunes i herències dinàstiques.</li>
+                    <li><strong>Transparència Total:</strong> "Open Data" per saber on va cada euro públic.</li>
+                    <li><strong>Anticorrupció:</strong> Recuperació íntegra dels diners robats.</li>
+                </ul>
+            </div>
+    
+            <div class="card">
+                <h3>🎗️ Model Territorial</h3>
+                <p>Un encaix basat en la llibertat, la democràcia pura i la sobirania cultural.</p>
+                <ul>
+                    <li><strong>Dret a Decidir:</strong> Suport ferm a l'autodeterminació des d'un enfocament pacífic i
+                        europeista.</li>
+                    <li><strong>Llengua i Cultura:</strong> Promoció activa del català i plena autonomia fiscal.</li>
+                </ul>
+            </div>
+    
+            <div class="card" style="border-bottom-color: var(--morado);">
+                <h3>🎓 Pacte Intergeneracional</h3>
+                <p>Als joves us devem un futur, no promeses buides.</p>
+                <ul>
+                    <li><strong>Renda d'Emancipació:</strong> Garantia d'ingressos per trencar la dependència familiar.</li>
+                    <li><strong>Ocupació de Qualitat:</strong> Derogació dels contractes escombraries.</li>
+                    <li><strong>Salut Mental:</strong> Accés gratuït i universal sense llistes d'espera eternes.</li>
+                </ul>
+            </div>
+    
+        </div>
+    </section>
+
+    <section style="background-color: var(--hueso-oscuro); padding: 50px 20px;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: var(--verde);">Visió de Catalunya</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+                Defensem el dret a decidir des d'un enfocament democràtic, europeu i dialogant.
+                Prioritzem l'estabilitat econòmica i la cohesió social, promovent l'autonomia i la llibertat cultural
+                plena.
+            </p>
+        </div>
+    </section>
+
+    <section id="equip" class="container">
+        <h2 class="section-title">El Nostre Equip</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="img/sara.jpg" alt="Sara Charles" class="member-img">
+                <div class="member-role">Presidenta</div>
+                <h4>Sara Charles</h4>
+                <div class="member-email">slcp0099@gmail.com</div>
+            </div>
+            <div class="team-member">
+                <img src="img/julia.jpg" alt="Júlia Ransanz" class="member-img">
+                <div class="member-role">Vicepresidenta i Igualtat</div>
+                <h4>Júlia Ransanz</h4>
+                <div class="member-email">juliamarin2102@gmail.com</div>
+            </div>
+            <div class="team-member">
+                <img src="img/javier.jpg" alt="Javier Fernández" class="member-img">
+                <div class="member-role">Ministre d'Economia</div>
+                <h4>Javier Fernández</h4>
+                <div class="member-email">Javier.fernandez.perez.2007@gmail.com</div>
+            </div>
+            <div class="team-member">
+                <img src="img/gloria.jpg" alt="Gloria Morante" class="member-img">
+                <div class="member-role">Ministra de Defensa</div>
+                <h4>Gloria Morante</h4>
+                <div class="member-email">morantegloria06@gmail.com</div>
+            </div>
+            <div class="team-member">
+                <img src="img/anahiz.jpg" alt="Anahiz Vega" class="member-img">
+                <div class="member-role">Ministra d'Habitatge</div>
+                <h4>Anahiz Vega</h4>
+                <div class="member-email">anahizvegatenia@gmail.com</div>
+            </div>
+        </div>
+    </section>
+    <section id="participa" class="form-section">
+        <h2 class="section-title">La Teva Veu Compta</h2>
+        <p style="margin-bottom: 30px;">Tens una proposta per millorar l'institut? Vols unir-te als grups de treball?
+            Escriu-nos.</p>
+    
+        <div class="form-container">
+            <form action="https://formsubmit.co/partitpoliticavanza@gmail.com" method="POST">
+    
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://LaSierra12.github.io/AvancemJunts/">
+                <input type="hidden" name="_subject" value="Nova proposta des de la web!">
+    
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="El teu nom" required>
                 </div>
-                <div class="tarjeta">
-                    <h3>🌱 Sostenibilidad</h3>
-                    <p>Eliminación de plásticos de un solo uso en todo el recinto escolar.</p>
+    
+                <div class="form-group">
+                    <label for="email">Correu Electrònic</label>
+                    <input type="email" id="email" name="email" placeholder="tucorreu@exemple.com" required>
                 </div>
-                <div class="tarjeta">
-                    <h3>💻 Digitalización</h3>
-                    <p>Wifi de alta velocidad real en todas las aulas, no solo en la biblioteca.</p>
+    
+                <div class="form-group">
+                    <label for="tema">Tema</label>
+                    <select id="tema" name="tema">
+                        <option value="Proposta">Proposta</option>
+                        <option value="Voluntariat">Vull ajudar (Voluntariat)</option>
+                        <option value="Queixa">Queixa / Suggeriment</option>
+                        <option value="Altres">Altres</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="missatge">Missatge</label>
+                    <textarea id="missatge" name="missatge" rows="5" placeholder="Explica'ns la teva idea..."
+                        required></textarea>
+                </div>
+    
+                <button type="submit" class="btn-enviar">Enviar Proposta</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contacte" class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>Avança</h3>
+                <p>El canvi comença a les aules.</p>
+                <p>📩 partitpoliticavanza@gmail.com</p>
+            </div>
+            <div>
+                <h4>Segueix-nos</h4>
+                <div class="social-icons">
+                    <a href="https://instagram.com/avancem_junts" target="_blank">Instagram</a>
+                    <a href="https://tiktok.com/@avancemjunts" target="_blank">TikTok</a>
                 </div>
             </div>
-        </section>
-
-        <section id="equipo" style="margin-top: 50px;">
-            <h2 style="color: var(--color-primario);">Nuestro Candidato</h2>
-            <p><strong>Juan Pérez</strong> - Estudiante de 2º de Bachillerato.</p>
-            <p>"No prometo lo que no puedo cumplir. Prometo trabajar en lo que todos necesitamos."</p>
-        </section>
-    </div>
-
-    <footer>
-        <p>© 2024 Partido Renovación Estudiantil. Proyecto de Clase.</p>
+        </div>
+        <div
+            style="text-align: center; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;">
+            <small>© 2024 Avança. Projecte educatiu.</small>
+        </div>
     </footer>
 
 </body>
