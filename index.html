@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partido Renovación Estudiantil | El cambio empieza en el aula</title>
+    <style>
+        /* ESTILOS CSS - Diseño Visual */
+        :root {
+            --color-primario: #004d99;
+            /* Azul serio */
+            --color-secundario: #f0f0f0;
+            --color-acento: #e63946;
+            /* Rojo para llamadas a la acción */
+            --texto: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--texto);
+        }
+
+        /* Cabecera */
+        header {
+            background-color: var(--color-primario);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Sección Hero (Portada) */
+        .hero {
+            background-color: var(--color-secundario);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--color-acento);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--color-primario);
+        }
+
+        .btn-votar {
+            background-color: var(--color-acento);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Secciones de contenido */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .propuestas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .tarjeta {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>PRE - Partido Renovación Estudiantil</h2>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#propuestas">Propuestas</a></li>
+                <li><a href="#equipo">Candidatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>Tu voz, nuestro compromiso.</h1>
+        <p>Luchamos por una cafetería más barata y apuntes libres para todos.</p>
+        <a href="#propuestas" class="btn-votar">Lee nuestro programa</a>
+    </section>
+
+    <div class="container">
+        <section id="propuestas">
+            <h2 style="color: var(--color-primario); text-align: center;">Nuestros Pilares</h2>
+            <div class="propuestas">
+                <div class="tarjeta">
+                    <h3>📚 Educación Abierta</h3>
+                    <p>Proponemos crear un banco común de apuntes validado por profesores.</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>🌱 Sostenibilidad</h3>
+                    <p>Eliminación de plásticos de un solo uso en todo el recinto escolar.</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>💻 Digitalización</h3>
+                    <p>Wifi de alta velocidad real en todas las aulas, no solo en la biblioteca.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipo" style="margin-top: 50px;">
+            <h2 style="color: var(--color-primario);">Nuestro Candidato</h2>
+            <p><strong>Juan Pérez</strong> - Estudiante de 2º de Bachillerato.</p>
+            <p>"No prometo lo que no puedo cumplir. Prometo trabajar en lo que todos necesitamos."</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Partido Renovación Estudiantil. Proyecto de Clase.</p>
+    </footer>
+
+</body>
+
+</html>
