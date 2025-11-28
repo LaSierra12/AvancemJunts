@@ -180,6 +180,26 @@
             box-shadow: 0 6px 12px rgba(127, 82, 182, 0.4);
         }
 
+        /* Estilo para el botón de descarga (transparente con borde) */
+        .btn-descarga {
+            display: inline-block;
+            background-color: transparent;
+            color: white;
+            padding: 7px 25px;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+            margin-left: 10px; /* Separación si pones otro botón al lado */
+            transition: 0.3s;
+        }
+
+        .btn-descarga:hover {
+            background-color: white;
+            color: var(--morado); /* Se vuelve morado al pasar el ratón */
+        }
+
         /* --- HERO (PORTADA) --- */
         .hero {
             background: var(--gradiente);
@@ -352,13 +372,23 @@
     <section class="hero">
         <div style="max-width: 900px; margin: 0 auto;">
             <h1>EL FUTUR NO S'ESPERA,<br>ES CONSTRUEIX</h1>
-            <p>Som la veu del progrés, la justícia social i la llibertat. Un partit jove per a una Catalunya moderna,
-                verda i feminista.</p>
+            <p>Som la veu del progrés, la justícia social i la llibertat. Un partit jove per a una Catalunya moderna, verda
+                i feminista.</p>
+    
+            <div style="margin-top: 30px;">
+                <a href="#ideologia" class="btn-unete" style="background: white; color: var(--morado) !important;">
+                    Veure Programa
+                </a>
+    
+                <a href="docs/carta_avanca.pdf" download="Carta_Presentacio_Avanca.pdf" class="btn-descarga">
+                    📄 Llegir Carta de Presentació
+                </a>
+            </div>
         </div>
     </section>
 
     <section id="ideologia" class="container">
-        <h2 class="section-title">Els Nostres 5 Pilars de Govern</h2>
+        <h2 class="section-title">Els Nostres Pilars de Govern</h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
             Defensem una esquerra progressista transformadora. La nostra missió és el blindatge dels Drets Humans i la
             construcció d'un escut social i climàtic.
@@ -484,7 +514,7 @@
     </section>
     <section id="participa" class="form-section">
         <h2 class="section-title">La Teva Veu Compta</h2>
-        <p style="margin-bottom: 30px;">Tens una proposta per millorar l'institut? Vols unir-te als grups de treball?
+        <p style="margin-bottom: 30px;">Tens una proposta per millorar ? Vols unir-te al nostre equip?
             Escriu-nos.</p>
     
         <div class="form-container">
