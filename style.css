@@ -438,9 +438,98 @@ header {
     transition: 0.3s;
 }
 
+/* --- SECCIÓN VISIÓ DE CATALUNYA --- */
+.vision-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.vision-item {
+    flex: 1;
+    min-width: 300px; /* Para móviles */
+    max-width: 350px;
+    text-align: left; /* Alineado a la izquierda para mejor lectura */
+    background: rgba(255, 255, 255, 0.5); /* Fondo semitransparente sutil */
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 4px solid var(--verde); /* Detalle de color */
+    transition: 0.3s;
+}
+
+.vision-item:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.vision-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.vision-item h3 {
+    color: var(--morado);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.vision-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--texto);
+}
 #myBtn:hover {
     background-color: var(--morado);
     transform: translateY(-3px);
+}
+
+/* --- SECCIÓN VISIÓ DE CATALUNYA --- */
+.vision-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.vision-item {
+    flex: 1;
+    min-width: 300px;
+    /* Para móviles */
+    max-width: 350px;
+    text-align: left;
+    /* Alineado a la izquierda para mejor lectura */
+    background: rgba(255, 255, 255, 0.5);
+    /* Fondo semitransparente sutil */
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 4px solid var(--verde);
+    /* Detalle de color */
+    transition: 0.3s;
+}
+
+.vision-item:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.vision-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.vision-item h3 {
+    color: var(--morado);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.vision-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--texto);
 }
 
 /* --- RESPONSIVE MOBILE --- */
