@@ -20,7 +20,12 @@
                 <img src="img/logo.png" alt="Logo Avança" class="logo-img" onerror="this.style.display='none'">
                 <span class="brand-name">Avança</span>
             </div>
-            <nav class="nav-links">
+            <div class="hamburger" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav class="nav-links" id="navLinks">
                 <div style="display: flex; align-items: center; gap: 5px;">
                     <a href="index.html" class="lang-switch"
                         style="border: 1px solid var(--verde); padding: 5px 10px; border-radius: 5px; font-size: 0.8rem;">CA</a>
@@ -463,12 +468,26 @@
     <button onclick="topFunction()" id="myBtn" title="Subir arriba">⬆</button>
     
     <script>
-        // Lògica del botó
+        // 1. Lógica del Menú Hamburguesa
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            // Esta línea es la que fallaba porque no encontraba el ID
+            if (menu) {
+                menu.classList.toggle("active");
+            } else {
+                console.error("Error: No he trobat l'element amb id='navLinks'");
+            }
+        }
+
+        // 2. Lógica del botón subir arriba
         let mybutton = document.getElementById("myBtn");
 
         window.onscroll = function () { scrollFunction() };
 
         function scrollFunction() {
+            // Verifica que el botón existe para evitar errores
+            if (!mybutton) return;
+
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 mybutton.style.display = "block";
             } else {
