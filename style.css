@@ -326,6 +326,123 @@ header {
     background: var(--morado);
 }
 
+/* --- SECCIÓN TRANSPARENCIA Y DOCUMENTOS --- */
+
+/* Tarjetas de documentos (PDFs) */
+.doc-card {
+    background: white;
+    border: 2px solid var(--hueso-oscuro);
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.doc-card:hover {
+    border-color: var(--verde);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-doc {
+    display: inline-block;
+    background-color: var(--verde);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.btn-doc:hover {
+    background-color: var(--morado);
+    color: white;
+}
+
+/* --- PRESUPUESTO VISUAL --- */
+.budget-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--hueso-oscuro);
+}
+
+.budget-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.budget-col {
+    flex: 1;
+    min-width: 300px;
+    /* Para que se vea bien en móvil */
+}
+
+.budget-item {
+    margin-bottom: 20px;
+}
+
+.budget-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Barras de progreso */
+.progress-bg {
+    background-color: #eee;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* Para que la barra interna no se salga de los bordes redondos */
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+    /* Animación suave al cargar */
+}
+
+.progress-fill.verde {
+    background-color: var(--verde);
+}
+
+.progress-fill.morado {
+    background-color: var(--morado);
+}
+/* El rojo ya lo puse inline en el HTML para la excepción */
+
+/* Botón subir arriba */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--verde);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    /* Redondo */
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+#myBtn:hover {
+    background-color: var(--morado);
+    transform: translateY(-3px);
+}
+
 /* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
     .hero h1 {
