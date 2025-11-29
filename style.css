@@ -601,9 +601,152 @@ header {
     border-radius: 2px;
     transition: 0.3s;
 }
+/* --- SOCIAL BANNER --- */
+.social-banner {
+    background: linear-gradient(135deg, var(--verde) 0%, var(--morado) 100%);
+    padding: 60px 20px;
+    color: white;
+    margin-top: 50px;
+}
+
+.social-content {
+    display: flex;
+    justify-content: space-between;
+    /* Texto a la izquierda, botones a la derecha */
+    align-items: center;
+    flex-wrap: wrap;
+    /* Para móvil */
+    gap: 30px;
+}
+
+.social-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo específico para el botón de Instagram */
+.btn-social.insta {
+    background-color: white;
+    color: var(--morado);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-social.insta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo específico para el botón de TikTok */
+.btn-social.tiktok {
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Oscuro semitransparente */
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-social.tiktok:hover {
+    background-color: black;
+    border-color: black;
+    transform: translateY(-3px);
+}
+
+/* --- FOOTER PROFESIONAL --- */
+.footer {
+    background-color: var(--verde);
+    color: white;
+    padding: 60px 0 20px 0;
+    /* Más espacio arriba */
+    margin-top: 50px;
+    font-size: 0.95rem;
+}
+
+.footer-grid {
+    display: grid;
+    /* Crea columnas automáticas, mínimo 200px de ancho */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    color: var(--hueso-claro);
+    /* Color crema para títulos */
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* Listas de enlaces */
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+    /* Efecto de movimiento al pasar el ratón */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Barra inferior */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
 
 /* --- RESPONSIVE MOBILE (ACTUALIZADO) --- */
 @media (max-width: 768px) {
+    .footer-bottom {
+            justify-content: center;
+            flex-direction: column;
+        }
+        .social-content {
+                justify-content: center;
+                text-align: center;
+            }
+        
+            .social-text {
+                text-align: center;
+            }
+        
+            .social-buttons {
+                justify-content: center;
+                width: 100%;
+            }
     .hero h1 {
         font-size: 2.2rem;
     }
