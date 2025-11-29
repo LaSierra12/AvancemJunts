@@ -149,7 +149,7 @@
                 Transformamos la indignación en leyes. Estas son las <strong>5 medidas de urgencia</strong> extraídas de
                 nuestro documento base estratégico.
             </p>
-    
+
             <div class="program-list">
                 <div class="program-item">
                     <div class="program-number">01</div>
@@ -160,16 +160,17 @@
                             zonas tensionadas.</p>
                     </div>
                 </div>
-    
+
                 <div class="program-item">
                     <div class="program-number">02</div>
                     <div class="program-content">
                         <h3>Salud Universal Real (Dentista y Psicólogo)</h3>
-                        <p>Ampliación inmediata de la cartera de servicios: inclusión de la <strong>salud bucodental y la
+                        <p>Ampliación inmediata de la cartera de servicios: inclusión de la <strong>salud bucodental y
+                                la
                                 salud mental</strong> gratuitas para revertir las privatizaciones encubiertas.</p>
                     </div>
                 </div>
-    
+
                 <div class="program-item">
                     <div class="program-number">03</div>
                     <div class="program-content">
@@ -178,21 +179,23 @@
                             temporalidad de los bomberos forestales: "los incendios se apagan en invierno".</p>
                     </div>
                 </div>
-    
+
                 <div class="program-item">
                     <div class="program-number">04</div>
                     <div class="program-content">
                         <h3>Justicia Fiscal y Salarial</h3>
-                        <p>Nuevo impuesto a las Grandes Fortunas y herencias dinásticas. Limitación por ley de los sueldos
+                        <p>Nuevo impuesto a las Grandes Fortunas y herencias dinásticas. Limitación por ley de los
+                            sueldos
                             de los cargos electos a <strong>3 veces el SMI</strong>.</p>
                     </div>
                 </div>
-    
+
                 <div class="program-item">
                     <div class="program-number">05</div>
                     <div class="program-content">
                         <h3>Renta de Emancipación Joven</h3>
-                        <p>Garantía de ingresos mínimos para jóvenes en búsqueda de empleo o formación para <strong>romper
+                        <p>Garantía de ingresos mínimos para jóvenes en búsqueda de empleo o formación para
+                            <strong>romper
                                 la dependencia familiar</strong> y permitir un proyecto de vida propio.</p>
                     </div>
                 </div>
@@ -209,28 +212,32 @@
                     Esta es nuestra hoja de ruta para la próxima década.
                 </p>
             </div>
-    
+
             <div class="vision-grid">
                 <div class="vision-item">
                     <div class="vision-icon">🗳️</div>
                     <h3>Democracia y Verdad</h3>
-                    <p>El contexto ha cambiado. Queremos un <strong>Nuevo Referéndum</strong>, pero votar requiere saber. Proponemos una
-                        fase previa de <strong>Información Transparente</strong>: una auditoría pública donde se expliquen, con datos
+                    <p>El contexto ha cambiado. Queremos un <strong>Nuevo Referéndum</strong>, pero votar requiere
+                        saber. Proponemos una
+                        fase previa de <strong>Información Transparente</strong>: una auditoría pública donde se
+                        expliquen, con datos
                         reales y sin propaganda, las ventajas y los costes reales de todas las opciones.</p>
                 </div>
-    
+
                 <div class="vision-item">
                     <div class="vision-icon">🌱</div>
                     <h3>El Motor Verde del Sur</h3>
-                    <p>Cataluña debe liderar la <strong>reindustrialización verde</strong>. Queremos convertir el país en el
+                    <p>Cataluña debe liderar la <strong>reindustrialización verde</strong>. Queremos convertir el país
+                        en el
                         "Silicon Valley" de las energías renovables y la tecnología ética, creando empleo de alto valor
                         añadido para los jóvenes.</p>
                 </div>
-    
+
                 <div class="vision-item">
                     <div class="vision-icon">🤝</div>
                     <h3>Nación de Naciones</h3>
-                    <p>Una Cataluña donde el catalán sea <strong>lengua de encuentro</strong> y cohesión, no de imposición.
+                    <p>Una Cataluña donde el catalán sea <strong>lengua de encuentro</strong> y cohesión, no de
+                        imposición.
                         Defendemos una identidad abierta, integradora y orgullosamente diversa, donde nadie tenga que
                         renunciar a sus orígenes para sentirse catalán.</p>
                 </div>
@@ -466,27 +473,38 @@
         </div>
     </footer>
     <button onclick="topFunction()" id="myBtn" title="Subir arriba">⬆</button>
-    
+
     <script>
-        // 1. Lógica del Menú Hamburguesa
+        // 1. Lógica del Menú Hamburguesa (Abrir/Cerrar)
         function toggleMenu() {
             var menu = document.getElementById("navLinks");
-            // Esta línea es la que fallaba porque no encontraba el ID
             if (menu) {
                 menu.classList.toggle("active");
-            } else {
-                console.error("Error: No he trobat l'element amb id='navLinks'");
             }
         }
 
-        // 2. Lógica del botón subir arriba
+        // 2. NUEVO: Cerrar el menú automáticamente al hacer clic en un enlace
+        // Seleccionamos todos los enlaces (<a>) que hay dentro del menú
+        var menuLinks = document.querySelectorAll("#navLinks a");
+
+        // A cada enlace le ponemos una "orden"
+        menuLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                var menu = document.getElementById("navLinks");
+                // Si el menú existe, le quitamos la clase .active para que se cierre
+                if (menu) {
+                    menu.classList.remove("active");
+                }
+            });
+        });
+
+        // 3. Lógica del botón "Subir arriba"
         let mybutton = document.getElementById("myBtn");
 
         window.onscroll = function () { scrollFunction() };
 
         function scrollFunction() {
-            // Verifica que el botón existe para evitar errores
-            if (!mybutton) return;
+            if (!mybutton) return; // Evita errores si no encuentra el botón
 
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 mybutton.style.display = "block";
